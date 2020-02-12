@@ -7,15 +7,24 @@ class Counter extends Component{
       count: 0,
     }
   }
-
-
 //this is where we are going to put our methodsyay!
 
 increment = () => {
 this.setState({
   count: this.state.count + 1,
 })
+}
 
+decrement =() => {
+  this.setState({
+    count: this.state.count - 1,
+  })
+}
+
+reset =() => {
+  this.setState({
+    count: this.state.count =0,
+  })
 }
 
 
@@ -26,7 +35,8 @@ this.setState({
         <div className="counter">
           <h1>{this.state.count}</h1>
           <button type="button" onClick={this.increment}>Increment</button>
-          <button type="button">Decrement</button>
+          <button type="button" onClick={this.decrement}>Decrement</button>
+          <button type="button" onClick={this.reset}>Reset Count</button>
         </div>
       </div>
     )
